@@ -1,0 +1,41 @@
+<!-- index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de comisión</title>
+    <!-- Incluir hoja de estilos de Bootstrap desde CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+</head>
+<body>
+    <!-- Agregar contenedor responsivo -->
+    <div class="container mt-5">
+        <!-- Agregar formulario en una fila y dos columnas -->
+        <div class="row">
+            <div class="col-sm-6">
+                <form method="post" action="">
+                    <!-- Agregar etiqueta "label" y campo de entrada en formato de bloque -->
+                    <div class="form-group">
+                        <label for="comision">Escribe tus ventas:</label>
+                        <input type="number" class="form-control" id="comision" name="comision" />
+                    </div>
+                    <!-- Agregar botón en formato de bloque -->
+                    <button type="submit" class="btn btn-primary btn-block">Calcular</button>
+                </form>
+            </div>
+            <div class="col-sm-6">
+                <!-- Agregar div para mostrar resultado con clase "alert" y estilo "info" -->
+                <div id="resultado" class="alert alert-info">
+                    <% if (resultado) { %>
+                        <p>Su comisión principal es S/ <%= resultado.comision_principal %></p>
+                        <p>Su comisión extra es S/ <%= resultado.comision_extra_condicional %></p>
+                        <p>Su comisión total es S/ <%= resultado.comision_total %></p>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
